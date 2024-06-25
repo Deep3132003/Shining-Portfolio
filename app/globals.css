@@ -1,0 +1,146 @@
+/* Import Google Font */
+@import url("https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap");
+
+/* Tailwind CSS */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Styles */
+.cursive {
+  font-family: "Cedarville Cursive", cursive;
+}
+
+/* Animated Gradient Welcome Text */
+.Welcome-text {
+  background: linear-gradient(
+      45deg,
+      #8a3ab9,
+      #e95950,
+      #fccc63,
+      #8a3ab9,
+      #e95950
+    );
+  background-size: 200% 200%;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: gradientAnimation 10s ease infinite;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Welcome Box */
+.Welcome-box {
+  isolation: isolate;
+  overflow: hidden;
+  align-items: center;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  display: flex;
+  position: relative;
+  padding: 20px;
+  transition: box-shadow 0.3s ease-in-out;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Primary Button */
+.button-primary {
+  background: linear-gradient(
+      180deg,
+      #667eea,
+      #764ba2,
+      #6b8dd6,
+      #8e37d7,
+      #4a4e4d
+    );
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 24px;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  transition: background 0.3s ease-in-out;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.button-primary:hover {
+  background: linear-gradient(
+      180deg,
+      #4a4e4d,
+      #8e37d7,
+      #6b8dd6,
+      #764ba2,
+      #667eea
+    );
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Hidden Scrollbar */
+.scrollbar-hidden {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
+
+/* Smooth Scroll Behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Additional Unique Features */
+/* 1. Hover Effect on Welcome Box */
+.Welcome-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* 2. Sparkles Animation on SparklesIcon */
+.SparklesIcon {
+  position: relative;
+  display: inline-block;
+}
+
+.SparklesIcon::after {
+  content: '';
+  position: absolute;
+  top: -20%;
+  left: -20%;
+  right: -20%;
+  bottom: -20%;
+  background: radial-gradient(circle, #fff 20%, transparent 30%);
+  z-index: 1;
+  opacity: 0;
+  pointer-events: none;
+  animation: sparklesAnimation 1.5s ease infinite;
+}
+
+@keyframes sparklesAnimation {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+
+
